@@ -6,7 +6,10 @@ Created on Tue Nov 12 17:10:22 2019
 """
 
 '''
+--------------------------------------------------------------------------------------------
 The Problem:
+--------------------------------------------------------------------------------------------
+
 During rna-seq library preparation, there is a step involved after
 adapters are ligated to both fragments. That step involves fragment 
 amplification using PCR. PCR duplicates arise during this step of 
@@ -21,7 +24,7 @@ know that it should not be. This might lead to false assumptions about treatment
 lead to mis-interpretation of results.
 
 2. Consider another case where a gene is having high GC content, and it is known that it 
-will be over-expressed,still we get lower expression in the data after sequencing.
+will be over-expressed, but still we get lower expression in the data after sequencing.
 This might be due to the fact PCR amplifies GC-rich genes less compared to AT rich genes.
 
 This will also lead to mis-interpretation of results.
@@ -29,8 +32,13 @@ This will also lead to mis-interpretation of results.
 To avoid above problems,it is necessary to remove PCR duplicates after alignment.
 '''
 
+--------------------------------------------------------------------------------------------
+** Example Test Files in the 'test_files' folder **
+--------------------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------------------
 #Develop your algorithm using pseudocode
+--------------------------------------------------------------------------------------------
 #All Imports
 #import regex
 # Global declarations
@@ -39,28 +47,6 @@ To avoid above problems,it is necessary to remove PCR duplicates after alignment
 
 # dictionary declaration
 # set declaration 
-
-def parse_rec(info):
-    '''This function takes in a read and calculates true position based on the CIGAR string. 
-    Also it returns a concatenated string which is a combination of UMI,strand,chromosome number,
-    chromosome position.'''
-    
-    '''Split the record, get UMI,strand,chromosome number,chromosome position and store
-    it in the variables. Derive true position of the aligned read based on CIGAR string.
-    using join return a concatenated string containing UMI,strand,chromosome number,chromosome position.'''
-    
-    ''' Test Example ---
-     When given a record-
-         the function, after processing, will return a string in this format--"UMI_Chr_Pos_Strand"
-
-    The output from parse sam function will be input to this function.
-    It will process the record and return output similar to-- 
-    containing UMI,chr_no,pos,strand--
-    'CAACGATC_2_4626657_0'
-
-         '''
-      
-    return # string 
 def parse_sam(sam):
     '''This function takes in a SAM file and reads the records by chromosome. It then passes
     these reads as input to parse_rec function''' 
@@ -69,7 +55,7 @@ def parse_sam(sam):
     
     The input will be a file containing records that are sorted by chromosome---
     
-    NS500451:154:HWKTMBGXX:1:22103:21539:19173:GTGATGTC     0       2       3286131 36      71M     *       0       0       CCAGTTAAGAGGTTTCCAGATTTATTACACATCAGCACATTAATTATATATTAGGATGCTTAATCAAAATT        EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEMD:Z:71 NH:i:1  HI:i:1  NM:i:0  SM:i:36 XQ:i:40 X2:i:0  XO:Z:UU
+    NS500451:154:HWKTMBGXX:1:22103:21539:19173:GTGATGTC     0       1       3286131 36      71M     *       0       0                 CCAGTTAAGAGGTTTCCAGATTTATTACACATCAGCACATTAATTATATATTAGGATGCTTAATCAAAATT        EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEMD:Z:71 NH:i:1  HI:i:1  NM:i:0  SM:i:36 XQ:i:40 X2:i:0  XO:Z:UU
     NS500451:154:HWKTMBGXX:1:22103:66244:99484:GTGATGTC     1024    2       3286131 36      71M     *       0       0       CCAGTTAAGAGGTTTCCAGATTTATTACACATCAGCACATTAATTATATATTAGGATGCTTAATCAAAATT        EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEMD:Z:71 NH:i:1  HI:i:1  NM:i:0  SM:i:36 XQ:i:40 X2:i:0  XO:Z:UU
     .
     .
@@ -84,17 +70,41 @@ def parse_sam(sam):
 
     ['EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',
      'MD:Z:71', 'NH:i:1', 'HI:i:1', 'NM:i:0', 'SM:i:36', 'XQ:i:40', 'X2:i:0', 'XO:Z:UU']
+     
+     i.e. a list
     
     The output from parse_rec will be stored in a set. This will ensure that only unique
     reads are kept.
-    At the same time another set will be appended containg 'QNAME'.'''
-    return 
+    At the same time another set will be appended containg 'QNAME' and returned.'''
+    return #set of QNAMEs
 
+
+
+def parse_rec(info):
+    '''This function takes in a read and calculates its true position based on the CIGAR string. 
+    Also it returns a concatenated string which is a combination of UMI,strand,chromosome number,
+    chromosome position.'''
+    
+    '''Split the record, get UMI,strand,chromosome number,chromosome position and store
+    it in the variables. Derive true position of the aligned read based on CIGAR string.
+    using 'join', return a concatenated string containing UMI,strand,chromosome number,chromosome position.'''
+    
+    ''' Test Example ---
+     When given a record-
+         the function, after processing, will return a string in this format--"UMI_Chr_Pos_Strand"
+
+    The output from parse sam function will be input to this function.
+    It will process the record and return output similar to-- 
+    
+                    **** 'CAACGATC_2_4626657_0' ****
+         '''
+      
+    return # string 
+    
 def write_sam(set):
     ''' This function will take in a set of QNAMEs and write that to a new SAM file.'''
-    
     ''' Open Original SAM file, newSAM file,
-            Iterate over set and check if the QNAME is rcords present in files-
+            Iterate over set and check if the QNAME is present in existing file-
                 If yes,write it out to a new file:
                 else,continue'''
 
@@ -103,7 +113,14 @@ def write_sam(set):
     NS500451:154:HWKTMBGXX:1:22103:21539:19173:GTGATGTC,
     NS500451:154:HWKTMBGXX:1:22103:66244:99484:GTGATGTC
     
-    It will be compared to existing records and written to a new file'''
+    and the file contains--
+    NS500451:154:HWKTMBGXX:1:22103:21539:19173:GTGATGTC,
+    NS500451:154:HWKTMBGXX:1:22103:66244:99484:GTGATGTC
+    NS500451:154:HWKTMBGXX:1:22103:21539:19173:ATGATGTC,
+    NS500451:154:HWKTMBGXX:1:22103:66244:99484:AGTGATGTC
+    
+    
+    It will be compared to existing records and written to a new file. (The first two records will be written in this case).'''
     return
 
 
