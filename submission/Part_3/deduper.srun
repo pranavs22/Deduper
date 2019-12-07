@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --account=bgmp
+#SBATCH --job-name=deduper
+#SBATCH --partition=bgmp
+#SBATCH --output=slurm-%j-%x.out
+#SBATCH --time=0-00:10:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+
+f1="/projects/bgmp/shared/deduper/Dataset1.sam"
+f2="/projects/bgmp/shared/deduper/Dataset2.sam" 
+f3="/projects/bgmp/shared/deduper/Dataset3.sam"
+t="/projects/bgmp/shared/deduper/test.sam"
+p="/projects/bgmp/shared/deduper/paired_end.sam" 
+
+o1="/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/1"  
+o2="/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/2"  
+o3="/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/3"
+t_o="/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/test"  
+
+umi="/projects/bgmp/pranavs/Bi624/Deduper/STL96.txt"
+
+conda deactivate
+conda activate bgmp_py3
+
+/usr/bin/time python Sahasrabudhe_deduper.py -f $t -o $t_o -u $umi
+/usr/bin/time python Sahasrabudhe_deduper.py -f $f1 -o $o1 -u $umi
+/usr/bin/time python Sahasrabudhe_deduper.py -f $f2 -o $o2 -u $umi
+/usr/bin/time python Sahasrabudhe_deduper.py -f $f3 -o $o3 -u $umi
+/usr/bin/time python Sahasrabudhe_deduper.py -f $f2 -o $o2 -u $umi -p paired-end
+
+conda deactivate

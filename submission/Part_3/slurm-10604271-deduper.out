@@ -1,0 +1,194 @@
+Sahasrabudhe_deduper.py:23: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start=time.clock()
+Sahasrabudhe_deduper.py:178: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  print("\nFinished in {0:5f} seconds".format(time.clock()-start))
+
+---------------------------------------------------------
+Sahasrabudhe_deduper.py - A tool that identifies and removes PCR dedupliates
+Author: Pranav Sahasrabudhe
+Email: pranavs@uoregon.edu
+Github: https://github.com/pranavs22/Deduper
+---------------------------------------------------------
+
+
+
+Running command python Sahasrabudhe_deduper.py -f /projects/bgmp/shared/deduper/test.sam -o /projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/test_deduped.sam -u /projects/bgmp/pranavs/Bi624/Deduper/STL96.txt
+
+UMIs added...
+
+Deduplicating reads...
+Chromosome 2 finished
+
+Finished Deduplicating reads!
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+Total 		 76
+With umi 	 75
+without umi 	 1
+Forward 	 74
+Reverse 	 0
+duplicate 	 21
+unique 		 53
+
+Records written successfully in '/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/test_deduped.sam' file
+
+Finished in 0.010000 seconds
+0.01user 0.01system 0:00.02elapsed 92%CPU (0avgtext+0avgdata 10416maxresident)k
+0inputs+0outputs (0major+2042minor)pagefaults 0swaps
+Sahasrabudhe_deduper.py:23: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start=time.clock()
+Sahasrabudhe_deduper.py:178: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  print("\nFinished in {0:5f} seconds".format(time.clock()-start))
+
+---------------------------------------------------------
+Sahasrabudhe_deduper.py - A tool that identifies and removes PCR dedupliates
+Author: Pranav Sahasrabudhe
+Email: pranavs@uoregon.edu
+Github: https://github.com/pranavs22/Deduper
+---------------------------------------------------------
+
+
+
+Running command python Sahasrabudhe_deduper.py -f /projects/bgmp/shared/deduper/Dataset1.sam -o /projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/1_deduped.sam -u /projects/bgmp/pranavs/Bi624/Deduper/STL96.txt
+
+UMIs added...
+
+Deduplicating reads...
+Chromosome 2 finished
+
+Finished Deduplicating reads!
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+Total 		 1013180
+With umi 	 1004990
+without umi 	 8190
+Forward 	 1004944
+Reverse 	 45
+duplicate 	 369005
+unique 		 635954
+
+Records written successfully in '/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/1_deduped.sam' file
+
+Finished in 3.520000 seconds
+3.35user 0.18system 0:03.58elapsed 98%CPU (0avgtext+0avgdata 109108maxresident)k
+0inputs+0outputs (0major+26975minor)pagefaults 0swaps
+Sahasrabudhe_deduper.py:23: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start=time.clock()
+Sahasrabudhe_deduper.py:178: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  print("\nFinished in {0:5f} seconds".format(time.clock()-start))
+
+---------------------------------------------------------
+Sahasrabudhe_deduper.py - A tool that identifies and removes PCR dedupliates
+Author: Pranav Sahasrabudhe
+Email: pranavs@uoregon.edu
+Github: https://github.com/pranavs22/Deduper
+---------------------------------------------------------
+
+
+
+Running command python Sahasrabudhe_deduper.py -f /projects/bgmp/shared/deduper/Dataset2.sam -o /projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/2_deduped.sam -u /projects/bgmp/pranavs/Bi624/Deduper/STL96.txt
+
+UMIs added...
+
+Deduplicating reads...
+Chromosome 2 finished
+
+Finished Deduplicating reads!
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+Total 		 1382109
+With umi 	 1372790
+without umi 	 9319
+Forward 	 1372736
+Reverse 	 53
+duplicate 	 628601
+unique 		 744152
+
+Records written successfully in '/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/2_deduped.sam' file
+
+Finished in 4.610000 seconds
+4.39user 0.23system 0:04.68elapsed 98%CPU (0avgtext+0avgdata 109104maxresident)k
+0inputs+0outputs (0major+41611minor)pagefaults 0swaps
+Sahasrabudhe_deduper.py:23: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start=time.clock()
+Sahasrabudhe_deduper.py:178: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  print("\nFinished in {0:5f} seconds".format(time.clock()-start))
+
+---------------------------------------------------------
+Sahasrabudhe_deduper.py - A tool that identifies and removes PCR dedupliates
+Author: Pranav Sahasrabudhe
+Email: pranavs@uoregon.edu
+Github: https://github.com/pranavs22/Deduper
+---------------------------------------------------------
+
+
+
+Running command python Sahasrabudhe_deduper.py -f /projects/bgmp/shared/deduper/Dataset3.sam -o /projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/3_deduped.sam -u /projects/bgmp/pranavs/Bi624/Deduper/STL96.txt
+
+UMIs added...
+
+Deduplicating reads...
+Chromosome 1 finished
+Chromosome 2 finished
+Chromosome 3 finished
+Chromosome 4 finished
+Chromosome 5 finished
+Chromosome 6 finished
+Chromosome 7 finished
+Chromosome 8 finished
+Chromosome 9 finished
+Chromosome 10 finished
+Chromosome 11 finished
+Chromosome 12 finished
+Chromosome 13 finished
+Chromosome 14 finished
+Chromosome 15 finished
+Chromosome 16 finished
+Chromosome 17 finished
+Chromosome 18 finished
+Chromosome 19 finished
+Chromosome X finished
+Chromosome Y finished
+Chromosome MT finished
+
+Finished Deduplicating reads!
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+Total 		 5721150
+With umi 	 5672211
+without umi 	 48939
+Forward 	 5658315
+Reverse 	 13874
+duplicate 	 1618631
+unique 		 4042509
+
+Records written successfully in '/projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/3_deduped.sam' file
+
+Finished in 19.980000 seconds
+19.02user 0.98system 0:20.15elapsed 99%CPU (0avgtext+0avgdata 435852maxresident)k
+0inputs+0outputs (0major+149874minor)pagefaults 0swaps
+Sahasrabudhe_deduper.py:23: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start=time.clock()
+
+---------------------------------------------------------
+Sahasrabudhe_deduper.py - A tool that identifies and removes PCR dedupliates
+Author: Pranav Sahasrabudhe
+Email: pranavs@uoregon.edu
+Github: https://github.com/pranavs22/Deduper
+---------------------------------------------------------
+
+
+
+Running command python Sahasrabudhe_deduper.py -f /projects/bgmp/shared/deduper/Dataset2.sam -o /projects/bgmp/pranavs/Bi624/Deduper/submission/Part_3/2_deduped.sam -u /projects/bgmp/pranavs/Bi624/Deduper/STL96.txt
+
+Sorry, the current version of script does not support paired end files!. Exiting Program 
+0.01user 0.00system 0:00.02elapsed 92%CPU (0avgtext+0avgdata 10216maxresident)k
+0inputs+0outputs (0major+2006minor)pagefaults 0swaps
